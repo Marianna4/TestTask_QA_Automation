@@ -2,8 +2,6 @@
     "env":
     {
         "url": "https://www.pecodesoftware.com/qa-portal/greet.php",
-        "username":"Marianna",
-        "userpassword":"marianna123",
         "submitbtn":"Login"
     }
 
