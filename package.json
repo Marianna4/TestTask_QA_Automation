@@ -1,0 +1,22 @@
+{
+  "name": "testtask_qa_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marianna4/TestTask_QA_Automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marianna4/TestTask_QA_Automation/issues"
+  },
+  "homepage": "https://github.com/Marianna4/TestTask_QA_Automation#readme",
+  "dependencies": {
+    "cypress": "^6.8.0"
+  }
+}
