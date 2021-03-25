@@ -33,13 +33,23 @@ describe('Test task',() => {
             cy.wrap($er).should('not.be.empty')
         })
     })
-  /*
+  
     it('Check error messages', () => {
-        cy.get('.help-block').contains('No account found with that username.')
-
+        cy.get('.help-block').contains('No account found with that username.');
+        cy.reload()
+        cy.get('input[type="text"]').then(function ($elem) {
+          if ($elem.text() == '') {
+            expect('.help-block', 'Please enter username.')
+          } else expect('.help-block', 'be.empty')
+        })
+        cy.get('input[type="password"]').then(function ($pass) {
+          if ($pass.text() == '') {
+            expect('.help-block', 'Please enter your password.')
+          } else expect('.help-block', 'be.empty')
+        })
 
     })
-*/
+    
     it('Failed test',()=>{
         cy.title().should('not.eq','Login')
     })

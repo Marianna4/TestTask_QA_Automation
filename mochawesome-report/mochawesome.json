@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-03-25T23:24:22.336Z",
+    "end": "2021-03-25T23:24:44.854Z",
+    "duration": 22518,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f7e5895a-7f5b-4535-85b3-b757b6ab13e2",
+      "title": "",
+      "fullFile": "cypress\\integration\\QA_TC\\TC_automation_test.spec.js",
+      "file": "cypress\\integration\\QA_TC\\TC_automation_test.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "88fb0aeb-ca32-4984-89bc-13574589d6a0",
+          "title": "Test task",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Open page",
+              "fullTitle": "Test task Open page",
+              "timedOut": null,
+              "duration": 2915,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(Cypress.env('url'));",
+              "err": {},
+              "uuid": "8661780b-c043-4562-a058-ff98a67cfea4",
+              "parentUUID": "88fb0aeb-ca32-4984-89bc-13574589d6a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sing in",
+              "fullTitle": "Test task Sing in",
+              "timedOut": null,
+              "duration": 2506,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('userLogValues').then(function (user) {\n  cy.get('input[type=\"text\"]').type(user.username);\n  cy.get('input[type=\"password\"]').type(user.userpassword);\n});\ncy.get('.btn').contains(Cypress.env('submitbtn')).should('be.visible').click();",
+              "err": {},
+              "uuid": "ddf4ce88-340d-47f0-b650-ca1a58530f7b",
+              "parentUUID": "88fb0aeb-ca32-4984-89bc-13574589d6a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify elements",
+              "fullTitle": "Test task Verify elements",
+              "timedOut": null,
+              "duration": 372,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[id=\"all\"]').should(function ($all) {\n  expect($all).to.exist;\n});\ncy.get('.wrapper').should('contain.html', 'img').and('contain.text', 'QA Portal Login').and('include.html', 'form');\ncy.get('form').find('input').should('be.visible').should('have.class', 'btn-success');\ncy.get('.has-error').then(function ($er) {\n  var cls = $er.attr('class');\n  cy.wrap($er).should('not.be.empty');\n});",
+              "err": {},
+              "uuid": "d42e353d-ecad-47f3-9db6-b066c13d94db",
+              "parentUUID": "88fb0aeb-ca32-4984-89bc-13574589d6a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check error messages",
+              "fullTitle": "Test task Check error messages",
+              "timedOut": null,
+              "duration": 391,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.help-block').contains('No account found with that username.');\ncy.reload();\ncy.get('input[type=\"text\"]').then(function ($elem) {\n  if ($elem.text() == '') {\n    expect('.help-block', 'Please enter username.');\n  } else expect('.help-block', 'be.empty');\n});\ncy.get('input[type=\"password\"]').then(function ($pass) {\n  if ($pass.text() == '') {\n    expect('.help-block', 'Please enter your password.');\n  } else expect('.help-block', 'be.empty');\n});",
+              "err": {},
+              "uuid": "54d15186-2750-4a6c-81e0-0615a353f055",
+              "parentUUID": "88fb0aeb-ca32-4984-89bc-13574589d6a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed test",
+              "fullTitle": "Test task Failed test",
+              "timedOut": null,
+              "duration": 5160,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.title().should('not.eq', 'Login');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'Login' to not equal 'Login'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'Login' to not equal 'Login'\n    at Context.eval (https://www.pecodesoftware.com/__cypress/tests?p=cypress\\integration\\QA_TC\\TC_automation_test.spec.js:267:16)",
+                "diff": ""
+              },
+              "uuid": "af186166-decd-44c7-ab37-e5d19511b527",
+              "parentUUID": "88fb0aeb-ca32-4984-89bc-13574589d6a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Valid Page Object pattern",
+              "fullTitle": "Test task Valid Page Object pattern",
+              "timedOut": null,
+              "duration": 5047,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var logP = new _LoginPage[\"default\"]();\nlogP.visit();\ncy.fixture('userLogValues').then(function (user) {\n  logP.FillUsername(user.username);\n  logP.FillPassword(user.userpassword);\n});\nlogP.submit();",
+              "err": {},
+              "uuid": "e6c4abb6-ab31-46e2-97c9-7e348439a016",
+              "parentUUID": "88fb0aeb-ca32-4984-89bc-13574589d6a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8661780b-c043-4562-a058-ff98a67cfea4",
+            "ddf4ce88-340d-47f0-b650-ca1a58530f7b",
+            "d42e353d-ecad-47f3-9db6-b066c13d94db",
+            "54d15186-2750-4a6c-81e0-0615a353f055",
+            "e6c4abb6-ab31-46e2-97c9-7e348439a016"
+          ],
+          "failures": [
+            "af186166-decd-44c7-ab37-e5d19511b527"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16391,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
